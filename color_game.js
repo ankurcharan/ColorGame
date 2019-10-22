@@ -14,16 +14,16 @@ var modlst = document.querySelectorAll(".mode");
 init();
 
 function init()
-{		
+{
 	for(var j = 0;j<modlst.length;j++)
 	{
 		modlst[j].addEventListener("click", function() {
-		
+
 			this.textContent === "Easy"? numOfSq = 3: numOfSq = 6;
 
 			modlst[0].classList.remove("selected");
 			modlst[1].classList.remove("selected");
-			
+
 			this.classList.add("selected");
 
 			reset();
@@ -37,7 +37,7 @@ function init()
 		{
 			if(this.style.background === cor_col)
 			{
-				
+
 				msg.textContent = "Correct";
 				change_colors(cor_col);
 				h1.style.background = cor_col;
@@ -78,7 +78,7 @@ function setColor()
 		{
 			sqlst[i].style.display = "block";
 			sqlst[i].style.background = colors[i];
-		
+
 		}
 		else
 			sqlst[i].style.display = "none";
@@ -93,6 +93,7 @@ function change_colors(color){
 		}
 }
 
+// rand is a variable ;)
 
 function pickColor(){
 	var rand = Math.floor(Math.random()*colors.length);
@@ -109,7 +110,7 @@ function generateSqColors(numc){
 	return arr;
 }
 
-
+// funcyion to return Random Color
 function randomColor()
 {
 	var r = Math.floor(Math.random()*256);
@@ -117,6 +118,6 @@ function randomColor()
 	var b = Math.floor(Math.random()*256);
 
 	var col = "rgb("+r+", "+g+", "+b+")";
-	
+
 	return col;
 }
